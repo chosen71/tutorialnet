@@ -1,3 +1,6 @@
+<script type="text/javascript" src="/tutorialnet/style/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="/tutorialnet/style/javascript/view.js"></script>
+
 <?php
 
 // Define path to application directory
@@ -24,3 +27,5 @@ $application = new Zend_Application(
 );
 $application->bootstrap()
             ->run();
+?>
+

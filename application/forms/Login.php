@@ -23,19 +23,20 @@ class Application_Form_Login extends Zend_Form
                 ->addValidator('regex', false, array('/^[a-z]+/'))
                 ->addValidator('stringLength', false, array(6, 20))
                 ->setRequired(true)
-                ->addFilter('StringToLower');
+                ->addFilter('StringToLower')
+                ->addErrorMessage("mensaje de error");
 
         // Crea y configura el elemento password:
         $password = $this->createElement('password', 'password');
         $password->addValidator('StringLength', false, array(6))
-                ->setRequired(true);
+                 ->setRequired(true);
 
+        $submit = $this->createElement('submit', 'submit');
+        
         // Añade los elementos al formulario:
-        $this->addElement($username)
-        ->addElement($password)
-        // uso de addElement() como fábrica para crear el botón 'Login':
-        ->addElement('submit', 'login', array('label' => 'Login'));
-        return $this;
+        $this->addElements(array($username,$password,$submit));
+        $this->setElementFilters(array('StringTrim'));
+        //$this->addDisplayGroup(array('username', 'password'), 'login');
     }
 }
 
