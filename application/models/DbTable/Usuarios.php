@@ -9,8 +9,8 @@ class Application_Model_DbTable_Usuarios extends Zend_Db_Table_Abstract
     { 
 
     } 
-    public function listar(){ 
-
+    public function listar()
+    { 
         return $this->fetchAll(); 
     } 
 
