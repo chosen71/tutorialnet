@@ -22,7 +22,11 @@ class Application_Model_DbTable_Usuarios extends Zend_Db_Table_Abstract
                        ->query();
         return $result->fetchAll();
     }
-       
+	
+	public function check()
+	{
+		echo "prueba";
+	}
 }
 
 ?>
