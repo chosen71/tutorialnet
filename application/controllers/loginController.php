@@ -32,7 +32,7 @@ class Default_LoginController extends Zend_Controller_Action
         $values = $this->getRequest()->getParams();
         if (!$this->getRequest()->isPost())
         {
-            return $this->_forward('index');
+            return $this->_forward('index',array("form"=>$form));
         }
         
         if (!$form->isValid($values))
